@@ -1,13 +1,9 @@
 #!/usr/bin/python3
-# COMP3311 20T3 Ass3 ... print info about different releases for Movie
+
+#print info about different releases for Movie
 
 import sys
 import psycopg2
-#from helpers import whatever, functions, you, need
-
-# define any local helper functions here
-
-# set up some globals
 
 usage = "Usage: rels 'PartialMovieTitle'"
 db = None
@@ -41,7 +37,6 @@ order by Aliases.ordering asc
 try:
 	db = psycopg2.connect("dbname=imdb")
 	cursor = db.cursor()
-  # ... add your code here ...
 	cursor.execute(query, [sys.argv[1]])
 	count = 0
 	#count number of tuples
